@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Skill(run)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx --yes playwright install chromium)",
+      "Bash(node \"C:\\\\Users\\\\ALONSO~1.BAR\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dados-Alonso-defesamedica-deutz\\\\3a84bd1f-8fbc-406a-bfc2-9ce5bb507b76\\\\scratchpad\\\\screenshot.mjs\")",
+      "Bash(cp \"C:\\\\Users\\\\ALONSO~1.BAR\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dados-Alonso-defesamedica-deutz\\\\3a84bd1f-8fbc-406a-bfc2-9ce5bb507b76\\\\scratchpad\\\\screenshot.mjs\" \"c:\\\\Dados\\\\Alonso\\\\defesamedica-deutz\\\\_screenshot.mjs\")",
+      "Bash(node _screenshot.mjs)",
+      "Bash(netstat -ano)",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 38396 | Select-Object Id,ProcessName,Path,StartTime | Format-List\" 2>&1)",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 4768 -Force\")",
+      "Bash(npm run *)"
+    ]
+  }
+}
