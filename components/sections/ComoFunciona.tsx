@@ -11,7 +11,7 @@ const steps = [
     number: '02',
     title: 'Análise por advogado e médico',
     description:
-      'Seu caso será analisado em conjunto por advogados e médico, unindo estratégia jurídica e visão técnica para uma defesa mais precisa, segura e alinhada à realidade da profissão médica.',
+      'Seu caso será analisado em conjunto por advogados e por um médico, unindo estratégia jurídica e visão técnica para uma defesa mais precisa, segura e alinhada à realidade da profissão médica.',
   },
   {
     number: '03',

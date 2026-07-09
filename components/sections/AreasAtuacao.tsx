@@ -15,7 +15,7 @@ const areas = [
     icon: ShieldCheck,
     title: 'Blindagem e prevenção jurídica',
     description:
-      'Revisão de prontuários, termos de consentimento e rotinas para reduzir riscos antes que virem processo.',
+      'Revisão de prontuários, termos de consentimento e rotinas para reduzir riscos antes que virem processos.',
   },
   {
     icon: FileText,
