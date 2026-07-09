@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 ```
 - `title` ~55–60 caracteres; `description` ~150–160. Ambos são **copy** → validar com o cliente e passar pelo OAB (sem promessa, sem superlativo).
 - `canonical` **auto-referente** e coerente com `trailingSlash: true` (URL termina em `/`).
-- `<html lang="pt-BR">`, `theme-color` `#1E1E2E`.
+- `<html lang="pt-BR">`, `theme-color` `#1B3A5C`.
 - **[DECISÃO] index vs noindex:** padrão = indexável (ganho orgânico grátis, não atrapalha o Ads).
   Só usar `noindex` se o cliente quiser a página exclusivamente para anúncio.
 
@@ -55,10 +55,10 @@ Injetar via `<script type="application/ld+json">` na página.
     "streetAddress": "R. José Alexandre Buaiz, 350, sala 1613, Enseada do Suá",
     "addressLocality": "Vitória",
     "addressRegion": "ES",
-    "postalCode": "[CEP — confirmar]",
+    "postalCode": "29050-545",
     "addressCountry": "BR"
   },
-  "areaServed": "[ES / Sudeste / Brasil — confirmar]",
+  "areaServed": "Espírito Santo",
   "sameAs": ["https://deutzadv.com.br"],
   "description": "Defesa do médico em sindicância no CRM, processo ético-profissional e erro médico."
 }

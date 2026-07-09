@@ -17,7 +17,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Defesa do médico em sindicância no CRM e erro médico — Deutz Advocacia',
+  title: 'Defesa do médico em sindicância no CRM e erro médico · Deutz Advocacia',
   description:
     'Equipe que une Direito e Medicina na defesa do médico: sindicância no CRM, processo ético-profissional e erro médico. Atendimento sigiloso pelo WhatsApp.',
   alternates: { canonical: '/' },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: `${SITE_URL}/`,
     siteName: 'Deutz Advocacia',
-    title: 'Defesa do médico — Deutz Advocacia',
+    title: 'Defesa do médico · Deutz Advocacia',
     description:
       'Equipe que une Direito e Medicina na defesa do médico: sindicância no CRM, processo ético-profissional e erro médico. Atendimento sigiloso pelo WhatsApp.',
     images: [{ url: '/og.jpg', width: 1200, height: 630 }],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: '#1E1E2E',
+  themeColor: '#1B3A5C',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

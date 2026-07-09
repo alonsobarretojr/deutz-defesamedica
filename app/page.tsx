@@ -1,8 +1,10 @@
 import Header from '@/components/Header';
 import Hero from '@/components/sections/Hero';
+import ServicesBar from '@/components/ServicesBar';
 import AreasAtuacao from '@/components/sections/AreasAtuacao';
+import StatsBar from '@/components/StatsBar';
 import ComoFunciona from '@/components/sections/ComoFunciona';
-import QuemAssina from '@/components/sections/QuemAssina';
+import Equipe from '@/components/sections/Equipe';
 import Faq from '@/components/sections/Faq';
 import CtaFinal from '@/components/sections/CtaFinal';
 import Footer from '@/components/sections/Footer';
@@ -23,9 +25,11 @@ export default function Home() {
       <Header />
       <main className="pb-20 md:pb-0">
         <Hero />
+        <ServicesBar />
         <AreasAtuacao />
+        <StatsBar />
         <ComoFunciona />
-        <QuemAssina />
+        <Equipe />
         <Faq />
         <CtaFinal />
       </main>

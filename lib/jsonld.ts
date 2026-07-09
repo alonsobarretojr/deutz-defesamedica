@@ -13,10 +13,10 @@ export function legalServiceJsonLd() {
       streetAddress: 'R. José Alexandre Buaiz, 350, sala 1613, Enseada do Suá',
       addressLocality: 'Vitória',
       addressRegion: 'ES',
-      postalCode: process.env.NEXT_PUBLIC_POSTAL_CODE || '[CEP — confirmar]',
+      postalCode: process.env.NEXT_PUBLIC_POSTAL_CODE || '29050-545',
       addressCountry: 'BR',
     },
-    areaServed: process.env.NEXT_PUBLIC_AREA_SERVED || '[ES / Sudeste / Brasil — confirmar]',
+    areaServed: process.env.NEXT_PUBLIC_AREA_SERVED || 'Espírito Santo',
     sameAs: ['https://deutzadv.com.br'],
     description:
       'Defesa do médico em sindicância no CRM, processo ético-profissional e erro médico.',

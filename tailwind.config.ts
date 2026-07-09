@@ -5,12 +5,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: '#1E1E2E',
-        light: '#F4F4F4',
-        body: '#555560',
-        accent: '#F5A623',
-        cta: { DEFAULT: '#2ECC8A', hover: '#26B478' },
-        surface: '#262636',
+        anchor: '#1B3A5C',
+        surface: '#24506F',
+        bar: '#0F2033',
+        title: '#16324F',
+        light: '#F7F4EF',
+        body: '#5C6B70',
+        gold: {
+          DEFAULT: '#C5A57A',
+          hover: '#B1946E',
+          dark: '#E0C8A4',
+          light: '#A8875A',
+        },
       },
       fontFamily: {
         serif: ['var(--font-fraunces)', 'Georgia', 'serif'],

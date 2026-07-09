@@ -13,33 +13,38 @@ descansada. Referência de estrutura: Silva Pimenta — mas com a paleta da Deut
 
 ## Hero — layout (definido)
 - Composição **centralizada**, coluna única (sem o split de formulário da referência; sem espaço vazio à direita).
-- Ordem: eyebrow → headline (Fraunces, palavra-destaque em itálico + accent) → subtítulo → CTA verde → reforço.
-- **Pilares de confiança integrados ao pé do hero** (não uma segunda faixa): 3 itens, filete fino `rgba(255,255,255,.08)` entre eles, ícones em accent (balança, estetoscópio, cadeado).
+- Ordem: label (filete) → headline (Fraunces, palavra-destaque em itálico + dourado) → subtítulo → CTA dourado → reforço.
+- **Pilares de confiança integrados ao pé do hero** (não uma segunda faixa): 3 itens, filete fino `rgba(255,255,255,.08)` entre eles, ícones em dourado (balança, estetoscópio, cadeado).
 - Sem item de abrangência no hero — coberto no FAQ.
 
-## Paleta — papéis de uso
-As 6 cores são travadas (ver CLAUDE.md). Aqui definimos **onde** cada uma entra:
+## Paleta — papéis de uso (v2)
+As cores são travadas (ver CLAUDE.md). Aqui definimos **onde** cada uma entra:
 
 | Cor | Papel |
 |-----|-------|
-| `#1E1E2E` dark | Fundo de hero, credibilidade, CTA final, rodapé |
-| `#F4F4F4` light | Fundo das seções de conteúdo |
+| `#1B3A5C` âncora | Fundo de hero (e header, unificado ao hero), CTA final |
+| `#24506F` surface | Cards/superfícies sobre o âncora (sobem) |
+| `#0F2033` bar | Barra de serviços, faixas de credibilidade, rodapé (afundam) |
+| `#16324F` title | Títulos sobre fundo claro |
+| `#F7F4EF` light | Fundo das seções de conteúdo |
+| `#5C6B70` body | Parágrafos sobre claro/branco |
 | `#FFFFFF` white | Cards sobre fundo claro; texto sobre fundo escuro |
-| `#555560` body | Parágrafos sobre claro/branco |
-| `#F5A623` accent | Eyebrows, palavra-destaque dos títulos, ícones, filetes, números |
-| `#2ECC8A` cta | **Exclusivo de botões de ação** |
+| `#C5A57A` gold | CTA + números + ícones |
+| `#E0C8A4` gold-dark | Palavra-destaque em título, sobre fundo escuro |
+| `#A8875A` gold-light | Palavra-destaque em título, sobre fundo claro (só texto display/grande) |
 
 Regras rígidas de cor:
-- **Laranja `#F5A623`: NUNCA em botões.** Nunca como texto de corpo sobre fundo claro
-  (contraste insuficiente). Só decorativo / display / sobre escuro.
-- **Verde `#2ECC8A`: só em CTA.** Texto do botão em `#1E1E2E` (escuro), **nunca branco**.
-  Hover: `#26B478` (tom derivado de estado — não é cor de marca nova).
-- Títulos sobre fundo claro: `#1E1E2E`. Texto secundário sobre escuro: branco a ~70%.
+- **CTA:** preenchido `#C5A57A`, texto `#0F2033` (nunca branco). Sem verde nesta v2.
+- **Dourado no fundo claro (`#F7F4EF`):** só em texto grande/display (`#A8875A`). Em texto
+  pequeno (labels, filete) não usar dourado como cor do texto ali, usar `#16324F` — o filete
+  em si (a linha vertical) pode continuar dourado.
+- Títulos sobre fundo claro: `#16324F`. Texto secundário sobre escuro: branco a ~70%.
+- Ícones e números (badges 01/02/03…) usam o dourado base `#C5A57A` em qualquer fundo.
 
 ## Acessibilidade — pares aprovados (contraste AA+)
-- ✅ Branco sobre `#1E1E2E` · ✅ Corpo `#555560` sobre `#F4F4F4`/branco
-- ✅ Título `#1E1E2E` sobre `#F4F4F4` · ✅ CTA verde + texto escuro
-- ❌ Branco sobre verde · ❌ Laranja como texto de corpo sobre claro
+- ✅ Branco sobre `#1B3A5C`/`#24506F`/`#0F2033` · ✅ Corpo `#5C6B70` sobre `#F7F4EF`/branco
+- ✅ Título `#16324F` sobre `#F7F4EF` · ✅ CTA dourado `#C5A57A` + texto `#0F2033`
+- ❌ Branco sobre dourado · ❌ Dourado como texto pequeno sobre `#F7F4EF`
 - Sempre: `focus-visible` com outline claro, alvos de toque ≥ 44px, `alt` em imagens,
   um único `h1`, hierarquia de headings correta.
 
@@ -51,7 +56,8 @@ Par **display serifada + corpo sans**:
 - **Corpo/UI: Inter** — 400/500/600.
 - Carregar via `next/font/google` (self-host no build; compatível com export estático;
   `display: 'swap'`, subset `latin`).
-- Eyebrow/labels: Inter, UPPERCASE, `tracking-wide`, ~0.8rem, cor laranja.
+- Labels de cabeçalho de seção: ver padrão **filete** em "Craft editorial" (não mais
+  caixa-alta com tracking largo — esse padrão foi abandonado).
 
 Escala fluida (mobile-first, `clamp`):
 - Display / h1: `clamp(2.25rem, 6vw, 4rem)`, leading ~1.05
@@ -67,19 +73,34 @@ Escala fluida (mobile-first, `clamp`):
 - Respiro é premium — não lotar; deixar ar entre blocos.
 
 ## Componentes (regras, não código fixo)
-- **Botão CTA (único, WhatsApp):** fundo verde, texto escuro, raio ~10px, padding generoso,
-  ícone do WhatsApp opcional, hover escurece + leve elevação. Nenhum outro botão compete com ele.
-- **Cards:** sobre claro = branco, borda sutil/sombra leve, raio 12–16px. Sobre escuro =
-  superfície levemente mais clara (`#262636`) + borda `rgba(255,255,255,.08)`. Card em
-  destaque pode ser escuro com ícone (padrão da referência).
-- **Ícones:** linha (`lucide-react`), laranja ou branco conforme o fundo.
-- **Filetes/dividers:** finos, laranja ou branco a baixa opacidade.
+- **Botão CTA (único, WhatsApp):** fundo dourado `#C5A57A`, texto `#0F2033` (nunca branco),
+  raio ~10px, padding generoso, ícone do WhatsApp opcional, hover escurece + leve elevação.
+  Nenhum outro botão compete com ele.
+- **Cards:** sobre claro = branco, borda sutil/sombra leve, raio 12–16px. Sobre o âncora
+  (`#1B3A5C`) = superfície `#24506F` + borda `rgba(255,255,255,.08)`. Card em destaque pode
+  usar a superfície com um leve gradiente (ver Craft editorial) + ícone.
+- **Ícones:** linha (`lucide-react`), dourado (`#C5A57A`) ou branco conforme o fundo.
+- **Filetes/dividers:** finos, dourado ou branco a baixa opacidade.
 
 ## Ritmo de seções (cadência dark/light)
-Hero **(dark)** → Credibilidade (tira fina ao fim do hero, para não empilhar dois blocos
-escuros pesados) → Áreas **(light)** → Como funciona **(branco/light)** → Quem assina
-**(light)** → FAQ **(light)** → CTA final **(dark)** → Rodapé **(dark)**.
-Ajustável, mas manter a alternância legível.
+Header **(âncora)** + Hero **(âncora)** → Barra de serviços (tira fina `#0F2033`) →
+Áreas **(light)** → Barra de números **(âncora)** → Como funciona **(branco/light)** →
+Equipe **(light)** → FAQ **(light)** → CTA final **(âncora)** → Rodapé **(`#0F2033`)**.
+Header e Hero usam a **mesma cor** (âncora) e não têm borda/sombra entre si — a LP não
+tem navegação, então o header é lido como a linha superior do hero, não como um bloco
+de menu à parte. Ajustável, mas manter a alternância legível.
+
+## Textura decorativa (glow + linhas)
+- **Glow radial duplo**, discreto, em seções de fundo escuro (âncora ou bar): um tom
+  dourado sutil no canto inferior-esquerdo (`rgba(197,165,122,0.16)`) e um neutro mais
+  fraco no canto superior-direito (`rgba(255,255,255,0.05)`), via componente
+  `components/SectionGlow.tsx`. Decorativo, `aria-hidden`, atrás do conteúdo (`z-0`,
+  conteúdo em `relative z-10`). Usado no Hero, CTA final e Rodapé.
+- **Linhas verticais finas** (1px, `rgba(255,255,255,0.06)`, ~20/50/80% da largura):
+  **exclusivas do Hero** — não propagar para outras seções, para manter esse elemento
+  como assinatura visual de abertura da página, não um padrão repetido.
+- Ambos são puramente decorativos e sutis o suficiente para não afetar o contraste do
+  texto sobre o fundo sólido.
 
 ## Craft editorial — descaracterizar "cara de IA"
 
@@ -122,10 +143,10 @@ nova. Aspas tipográficas corretas. Variar o comprimento das frases entre parág
 ## Logo
 - Renderizar **inline** via componente `components/Logo.tsx` (SVG embutido), não como `<img>`.
 - Texto "ADVOCACIA": `fill="currentColor"` → herda a cor da seção (branco no escuro,
-  `#1E1E2E` no claro). Dispensa arquivo on-light separado.
-- Marca/wordmark: usar o token do accent `var(--color-accent)` (`#F5A623`) — reconcilia o
-  laranja nativo do arquivo (`#f9a044`) com a paleta. (Resolve o item que estava pendente.)
-- Espaço livre mínimo ≈ metade da altura do logo. Altura no header ~28–32px.
+  `#16324F` no claro). Dispensa arquivo on-light separado.
+- Marca/wordmark: usar o token dourado `var(--color-gold)` (`#C5A57A`) via componente
+  inline. Sem conflito de cor a resolver.
+- Espaço livre mínimo ≈ metade da altura do logo. Altura no header ~40px (`h-10`).
 - Vetor → nítido em retina; zero requisição HTTP extra.
 
 ## Responsividade (mobile-first)
@@ -146,14 +167,17 @@ Fade/slide sutil ao entrar na viewport; hover leve nos botões. Respeitar
 **CSS variables** (`globals.css`):
 ```css
 :root {
-  --color-dark: #1E1E2E;
-  --color-light: #F4F4F4;
+  --color-anchor: #1B3A5C;
+  --color-surface: #24506F;
+  --color-bar: #0F2033;
+  --color-title: #16324F;
+  --color-light: #F7F4EF;
   --color-white: #FFFFFF;
-  --color-body: #555560;
-  --color-accent: #F5A623;     /* títulos/destaques — nunca botões */
-  --color-cta: #2ECC8A;        /* só botões */
-  --color-cta-hover: #26B478;  /* estado derivado */
-  --surface-dark-2: #262636;   /* cards sobre escuro */
+  --color-body: #5C6B70;
+  --color-gold: #C5A57A;        /* CTA + números + ícones */
+  --color-gold-hover: #B1946E;  /* estado derivado do CTA */
+  --color-gold-dark: #E0C8A4;   /* destaque em título sobre fundo escuro */
+  --color-gold-light: #A8875A;  /* destaque em título sobre fundo claro, só display */
   --border-on-dark: rgba(255, 255, 255, 0.08);
 }
 ```
@@ -161,12 +185,18 @@ Fade/slide sutil ao entrar na viewport; hover leve nos botões. Respeitar
 **Tailwind** (`tailwind.config.ts` → `theme.extend`):
 ```ts
 colors: {
-  dark: '#1E1E2E',
-  light: '#F4F4F4',
-  body: '#555560',
-  accent: '#F5A623',                                 // nunca em botões
-  cta: { DEFAULT: '#2ECC8A', hover: '#26B478' },      // só em botões
-  surface: '#262636',
+  anchor: '#1B3A5C',
+  surface: '#24506F',
+  bar: '#0F2033',
+  title: '#16324F',
+  light: '#F7F4EF',
+  body: '#5C6B70',
+  gold: {
+    DEFAULT: '#C5A57A',   // CTA + números + ícones
+    hover: '#B1946E',
+    dark: '#E0C8A4',      // destaque de título sobre fundo escuro
+    light: '#A8875A',     // destaque de título sobre fundo claro (só display)
+  },
 },
 fontFamily: {
   serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
