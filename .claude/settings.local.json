@@ -58,7 +58,11 @@
       "Bash(pkill -f \"http.server 4173\")",
       "Bash(powershell -Command \"Get-Process python -ErrorAction SilentlyContinue | Select-Object Id,Path\")",
       "Bash(powershell -Command \"Stop-Process -Id 38516 -Force\")",
-      "Bash(powershell -Command 'Get-NetTCPConnection -LocalPort 4173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }')"
+      "Bash(powershell -Command 'Get-NetTCPConnection -LocalPort 4173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }')",
+      "Bash(node _verify-reveal.js)",
+      "Bash(rm -f _shot-tmp.js _verify-reveal.js)",
+      "Bash(node _verify-count.js)",
+      "Bash(rm -f _shot-tmp.js _verify-count.js)"
     ]
   }
 }

@@ -1,6 +1,35 @@
+'use client';
+
 import { Plus } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
 import { faqItems } from '@/lib/faq';
+import { useReveal } from '@/hooks/useReveal';
+
+const STAGGER_MS = 70;
+
+function FaqItem({
+  question,
+  answer,
+  index,
+}: {
+  question: string;
+  answer: string;
+  index: number;
+}) {
+  const reveal = useReveal<HTMLDetailsElement>(index * STAGGER_MS);
+  return (
+    <details ref={reveal.ref} className={`group py-5 ${reveal.className}`} style={reveal.style}>
+      <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-title">
+        {question}
+        <Plus
+          className="h-5 w-5 shrink-0 text-gold transition-transform group-open:rotate-45"
+          aria-hidden="true"
+        />
+      </summary>
+      <p className="mt-3 max-w-3xl text-[1.0625rem] leading-[1.7] text-body">{answer}</p>
+    </details>
+  );
+}
 
 export default function Faq() {
   return (
@@ -16,19 +45,8 @@ export default function Faq() {
         />
 
         <div className="mt-10 divide-y divide-black/10 border-t border-black/10">
-          {faqItems.map(({ question, answer }) => (
-            <details key={question} className="group py-5">
-              <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-title">
-                {question}
-                <Plus
-                  className="h-5 w-5 shrink-0 text-gold transition-transform group-open:rotate-45"
-                  aria-hidden="true"
-                />
-              </summary>
-              <p className="mt-3 max-w-3xl text-[1.0625rem] leading-[1.7] text-body">
-                {answer}
-              </p>
-            </details>
+          {faqItems.map(({ question, answer }, i) => (
+            <FaqItem key={question} question={question} answer={answer} index={i} />
           ))}
         </div>
       </div>

@@ -1,9 +1,16 @@
+'use client';
+
 import Image from 'next/image';
 import SectionHeading from '@/components/SectionHeading';
+import { useReveal } from '@/hooks/useReveal';
 
 const mauricioTags = ['Direito + Medicina', 'Conselheiro CRM-ES'];
+const STAGGER_MS = 70;
 
 export default function Equipe() {
+  const mauricio = useReveal<HTMLDivElement>(0);
+  const davi = useReveal<HTMLDivElement>(STAGGER_MS);
+
   return (
     <section className="bg-light py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -24,7 +31,11 @@ export default function Equipe() {
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+          <div
+            ref={mauricio.ref}
+            className={`flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm ${mauricio.className}`}
+            style={mauricio.style}
+          >
             <div className="relative aspect-[4/3] w-full shrink-0">
               <Image
                 src="/team/mauricio-800x600.webp"
@@ -65,7 +76,11 @@ export default function Equipe() {
             </div>
           </div>
 
-          <div className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+          <div
+            ref={davi.ref}
+            className={`flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm ${davi.className}`}
+            style={davi.style}
+          >
             <div className="relative aspect-[4/3] w-full shrink-0">
               <Image
                 src="/team/davi-800x600.webp"

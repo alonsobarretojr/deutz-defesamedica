@@ -1,5 +1,10 @@
+'use client';
+
 import { Gavel, Stethoscope, ShieldCheck, FileText, UserCheck, Users } from 'lucide-react';
 import SectionHeading from '@/components/SectionHeading';
+import { useReveal } from '@/hooks/useReveal';
+
+const STAGGER_MS = 70;
 
 // Ordem = ordem visual no grid bento: linha 1 (Acusação, Blindagem) preenche as
 // duas colunas ao lado da âncora Sindicância; linha 2 (Questões, Atendimento)
@@ -31,7 +36,35 @@ const areas = [
   },
 ];
 
+function AreaCard({
+  icon: Icon,
+  title,
+  description,
+  index,
+}: {
+  icon: typeof Gavel;
+  title: string;
+  description: string;
+  index: number;
+}) {
+  const reveal = useReveal<HTMLDivElement>(index * STAGGER_MS);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`rounded-2xl border border-black/5 bg-white p-7 shadow-sm ${reveal.className}`}
+      style={reveal.style}
+    >
+      <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
+      <h3 className="mt-4 text-xl font-semibold text-title">{title}</h3>
+      <p className="mt-2 text-[1.0625rem] leading-[1.7] text-body">{description}</p>
+    </div>
+  );
+}
+
 export default function AreasAtuacao() {
+  const sindicancia = useReveal<HTMLDivElement>(0);
+  const cooperativas = useReveal<HTMLDivElement>((areas.length + 1) * STAGGER_MS);
+
   return (
     <section className="bg-light py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -49,7 +82,11 @@ export default function AreasAtuacao() {
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col justify-center rounded-2xl border border-on-dark bg-[linear-gradient(115deg,#2C5F86_0%,#24506F_50%,#1B3A5C_100%)] p-8 md:col-span-2">
+          <div
+            ref={sindicancia.ref}
+            className={`flex flex-col justify-center rounded-2xl border border-on-dark bg-[linear-gradient(115deg,#2C5F86_0%,#24506F_50%,#1B3A5C_100%)] p-8 md:col-span-2 ${sindicancia.className}`}
+            style={sindicancia.style}
+          >
             <Gavel className="h-8 w-8 text-gold" aria-hidden="true" />
             <h3 className="mt-5 text-2xl font-semibold text-white">
               Sindicância e processo ético-profissional
@@ -60,20 +97,15 @@ export default function AreasAtuacao() {
             </p>
           </div>
 
-          {areas.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm"
-            >
-              <Icon className="h-6 w-6 text-gold" aria-hidden="true" />
-              <h3 className="mt-4 text-xl font-semibold text-title">{title}</h3>
-              <p className="mt-2 text-[1.0625rem] leading-[1.7] text-body">
-                {description}
-              </p>
-            </div>
+          {areas.map(({ icon, title, description }, i) => (
+            <AreaCard key={title} icon={icon} title={title} description={description} index={i + 1} />
           ))}
 
-          <div className="flex flex-col justify-center rounded-2xl border border-gold bg-white p-8 shadow-sm md:col-span-2">
+          <div
+            ref={cooperativas.ref}
+            className={`flex flex-col justify-center rounded-2xl border border-gold bg-white p-8 shadow-sm md:col-span-2 ${cooperativas.className}`}
+            style={cooperativas.style}
+          >
             <Users className="h-8 w-8 text-gold" aria-hidden="true" />
             <h3 className="mt-5 text-2xl font-semibold text-gold-light">
               Cooperativas de trabalho médico
