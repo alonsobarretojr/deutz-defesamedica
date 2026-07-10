@@ -23,56 +23,74 @@ export default function Equipe() {
           processo ético.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-sm md:col-span-2">
-            <div className="flex items-center gap-4">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+            <div className="relative aspect-[4/3] w-full shrink-0">
               <Image
-                src="/team/mauricio-480.webp"
+                src="/team/mauricio-800x600.webp"
                 alt="Maurício Pires Anastácio"
-                width={80}
-                height={80}
+                fill
                 loading="lazy"
-                className="h-20 w-20 shrink-0 rounded-full object-cover"
+                sizes="(min-width: 768px) 560px, 100vw"
+                className="object-cover"
               />
-              <div>
-                <p className="text-lg font-semibold text-title">Maurício Pires Anastácio</p>
-                <p className="text-sm text-body">OAB-ES nº 43.620 · CRM/ES nº 5409</p>
+              <div className="absolute inset-x-0 bottom-0 bg-anchor px-3 py-1.5">
+                <p className="text-[11px] font-semibold text-white">Maurício Pires Anastácio</p>
               </div>
             </div>
-            <p className="mt-5 text-[1.0625rem] leading-[1.7] text-body">
-              Médico pela EMESCAM (1995) e advogado pela FDV (2024). Pós-graduado em
-              Ginecologia e Obstetrícia e em Sexologia, mestre em Políticas Públicas e
-              Desenvolvimento Local e Especialista em Ginecologia e Obstetrícia
-              (AMB/Febrasgo). Conselheiro Efetivo do CRM-ES, com 9 anos de experiência
-              no conselho.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {mauricioTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-gold/40 px-3 py-1 text-xs font-medium text-body"
-                >
-                  {tag}
-                </span>
-              ))}
+            <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold-light">
+                OAB-ES nº 43.620 · CRM/ES nº 5409
+              </p>
+              <p className="mt-1 font-serif text-lg font-semibold text-title">
+                Maurício Pires Anastácio
+              </p>
+              <p className="mt-4 text-[1.0625rem] leading-[1.7] text-body">
+                Médico pela EMESCAM (1995) e advogado pela FDV (2024). Pós-graduado em
+                Ginecologia e Obstetrícia e em Sexologia, mestre em Políticas Públicas e
+                Desenvolvimento Local e Especialista em Ginecologia e Obstetrícia
+                (AMB/Febrasgo). Conselheiro Efetivo do CRM-ES, com 9 anos de experiência
+                no conselho.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {mauricioTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-gold/40 px-3 py-1 text-xs font-medium text-body"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
-            <Image
-              src="/team/davi-480.webp"
-              alt="Davi Robalo Deutz"
-              width={64}
-              height={64}
-              loading="lazy"
-              className="h-16 w-16 rounded-full object-cover"
-            />
-            <p className="mt-4 text-lg font-semibold text-title">Davi Robalo Deutz</p>
-            <p className="text-sm text-body">OAB-ES nº 41.340</p>
-            <p className="mt-4 text-[1.0625rem] leading-[1.7] text-body">
-              Graduado em Direito pela Faculdade de Direito de Vitória (FDV, 2024), com
-              pós-graduação em Direito Cooperativista pela Faculdade Unimed.
-            </p>
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
+            <div className="relative aspect-[4/3] w-full shrink-0">
+              <Image
+                src="/team/davi-800x600.webp"
+                alt="Davi Robalo Deutz"
+                fill
+                loading="lazy"
+                sizes="(min-width: 768px) 560px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-anchor px-3 py-1.5">
+                <p className="text-[11px] font-semibold text-white">Davi Robalo Deutz</p>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gold-light">
+                OAB-ES nº 41.340
+              </p>
+              <p className="mt-1 font-serif text-lg font-semibold text-title">
+                Davi Robalo Deutz
+              </p>
+              <p className="mt-4 text-[1.0625rem] leading-[1.7] text-body">
+                Graduado em Direito pela Faculdade de Direito de Vitória (FDV, 2024), com
+                pós-graduação em Direito Cooperativista pela Faculdade Unimed.
+              </p>
+            </div>
           </div>
         </div>
       </div>

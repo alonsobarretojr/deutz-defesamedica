@@ -44,7 +44,21 @@
       "Bash(node .tmp-timeline-check.js)",
       "Bash(node .tmp-timeline2-check.js)",
       "Bash(node .tmp-equipe-check.js)",
-      "Bash(node .tmp-footer-check.js)"
+      "Bash(node .tmp-footer-check.js)",
+      "Bash(node -e \"const sharp=require\\('sharp'\\); Promise.all\\([sharp\\('assets/team-source/mauricio.jpg'\\).metadata\\(\\), sharp\\('assets/team-source/davi.jpg'\\).metadata\\(\\)]\\).then\\(\\([m,d]\\)=>console.log\\('mauricio',m.width,m.height,'davi',d.width,d.height\\)\\)\")",
+      "Bash(node \"C:\\\\Users\\\\ALONSO~1.BAR\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dados-Alonso-defesamedica-deutz\\\\7f4bf176-cf17-4e39-9575-b9f76f731653\\\\scratchpad\\\\crop-team.js\")",
+      "Bash(node _crop-team-tmp.js)",
+      "Bash(python \"C:\\\\Users\\\\ALONSO~1.BAR\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Dados-Alonso-defesamedica-deutz\\\\7f4bf176-cf17-4e39-9575-b9f76f731653\\\\scratchpad\\\\shot_equipe.py\")",
+      "Bash(python -m pip show playwright)",
+      "Bash(pip list *)",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(node _shot-tmp.js)",
+      "Bash(rm -f _shot-tmp.js)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"http.server 4173\")",
+      "Bash(powershell -Command \"Get-Process python -ErrorAction SilentlyContinue | Select-Object Id,Path\")",
+      "Bash(powershell -Command \"Stop-Process -Id 38516 -Force\")",
+      "Bash(powershell -Command 'Get-NetTCPConnection -LocalPort 4173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }')"
     ]
   }
 }
