@@ -48,7 +48,7 @@ export default function Hero() {
             primeiro contato à decisão.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3">
-            <WhatsAppButton />
+            <WhatsAppButton location="hero" />
             <p className="text-sm text-white/60">
               Atendimento confidencial · Sem compromisso
             </p>

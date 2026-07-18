@@ -5,3 +5,5 @@ out/
 .env.local
 *.log
 assets/team-source/
+tsconfig.tsbuildinfo
+.claude/settings.local.json

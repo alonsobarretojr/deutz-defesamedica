@@ -28,6 +28,8 @@ export default function Footer() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-cta="whatsapp"
+                  data-cta-location="footer"
                   className="focus-ring underline-offset-4 hover:underline"
                 >
                   (27) 99281-5232

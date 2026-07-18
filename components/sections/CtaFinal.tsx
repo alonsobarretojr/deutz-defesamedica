@@ -23,7 +23,7 @@ export default function CtaFinal() {
           sem compromisso.
         </p>
         <div className="mt-8 flex justify-center">
-          <WhatsAppButton />
+          <WhatsAppButton location="cta_final" />
         </div>
       </div>
     </section>

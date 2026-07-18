@@ -62,7 +62,8 @@
       "Bash(node _verify-reveal.js)",
       "Bash(rm -f _shot-tmp.js _verify-reveal.js)",
       "Bash(node _verify-count.js)",
-      "Bash(rm -f _shot-tmp.js _verify-count.js)"
+      "Bash(rm -f _shot-tmp.js _verify-count.js)",
+      "Bash(npx tsc *)"
     ]
   }
 }
