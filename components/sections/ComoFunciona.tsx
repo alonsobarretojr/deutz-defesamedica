@@ -83,7 +83,7 @@ function Step({
 
 export default function ComoFunciona() {
   return (
-    <section className="bg-white py-14 md:py-24">
+    <section id="como-funciona" className="bg-white py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeading
           label="O caminho"

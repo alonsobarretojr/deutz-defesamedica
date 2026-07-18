@@ -66,7 +66,7 @@ export default function AreasAtuacao() {
   const cooperativas = useReveal<HTMLDivElement>((areas.length + 1) * STAGGER_MS);
 
   return (
-    <section className="bg-light py-14 md:py-24">
+    <section id="areas-atuacao" className="bg-light py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeading
           label="Áreas de atuação"

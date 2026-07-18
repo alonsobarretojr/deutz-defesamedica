@@ -12,7 +12,7 @@ export default function Equipe() {
   const davi = useReveal<HTMLDivElement>(STAGGER_MS);
 
   return (
-    <section className="bg-light py-14 md:py-24">
+    <section id="equipe" className="bg-light py-14 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeading
           label="Equipe"
